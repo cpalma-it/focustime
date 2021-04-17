@@ -51,7 +51,7 @@ const styles = (status) =>
     },
     title: {
       color: 'white',
-      fontSizes: fontSizes.lg,
+      fontSize: fontSizes.lg,
     },
     clearContainer: {
       alignItems: 'center',
