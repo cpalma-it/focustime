@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Platform } from 'react-native';
-import Constants from 'expo-constants';
 import { Focus } from './src/features/focus/Focus';
 import { FocusHistory } from './src/features/focus/FocusHistory';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -9,7 +8,6 @@ import { colors } from './src/utils/colors';
 import { Timer } from './src/features/timer/Timer';
 import { spacing } from './src/utils/sizes';
 
-import { useKeepAwake } from 'expo-keep-awake';
 const STATUS = {
   COMPLETE: 1,
   CANCELED: 2,
@@ -67,6 +65,7 @@ const loadFocusHistory = async () => {
         <Timer
           focusSubject={focusSubject}
           onTimerEnd={() => {
+            console.log("onTimerEnd");
             addFocusHistorySubjectWithStatus(focusSubject, STATUS.COMPLETE);
 
             setFocusSubject(null);
